@@ -1,7 +1,15 @@
 <style>
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .card {
     background-color: rgb(46, 46, 46);
-    margin-bottom: 10px;
+    width: 80%;
+    margin: 10px;
 }
 </style>
 

@@ -23,10 +23,10 @@
 /* Style the overlay text */
 .overlay-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  top: 0%;
+  left: 0%;
+  transform: translate(20%, 20%);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -58,20 +58,21 @@
 </style>
 
 <template>
-    <div class="card">
+    <div class="card" id="show-modal" @click="showModal = true">
         <!-- Image at the top with overlay text -->
         <div class="card-image-container">
             <img :src="game.image" alt="Card Image" class="card-image" />
-            <div class="overlay-text">The Game</div>
+            <span class="overlay-text">The Game</span>
         </div>
 
         <!-- Left-aligned details -->
         <div class="card-details card-details-left">
             <h2 class="card-title">{{ game.name }}</h2>
             <p class="card-description">{{ game.about }}</p>
+            <p class="no-of-participants">No. of participants: {{ game.no_of_participants_per_team }}</p>
         </div>
 
-        <button id="show-modal" @click="showModal = true">Details</button>
+        <button>Details</button>
 
         <Teleport to="body">
         <!-- use the modal component, pass in the prop -->

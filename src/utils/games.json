@@ -7,7 +7,7 @@
             "The constraints are applied without any bias"
         ],
         "no_of_participants_per_team": 3,
-        "image": "/src/assets/vue.svg"
+        "image": "/src/assets/game-card-image.jpg"
     },
     {
         "name": "Game Name 2",
@@ -18,7 +18,7 @@
             "You can either choose rule 1 or rule 2"
         ],
         "no_of_participants_per_team": 4,
-        "image": "/src/assets/vue.svg"
+        "image": "/src/assets/game-card-image.jpg"
     },
     {
         "name": "Game Name 3",
@@ -29,7 +29,7 @@
             "You can either choose rule 1 or rule 2"
         ],
         "no_of_participants_per_team": 2,
-        "image": "/src/assets/vue.svg"
+        "image": "/src/assets/game-card-image.jpg"
     },
     {
         "name": "Game Name 4",
@@ -39,7 +39,7 @@
             "The constraints are applied without any bias"
         ],
         "no_of_participants_per_team": 3,
-        "image": "/src/assets/vue.svg"
+        "image": "/src/assets/game-card-image.jpg"
     }
     
 ]
