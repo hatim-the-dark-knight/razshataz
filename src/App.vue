@@ -2,7 +2,7 @@
   <!-- <Games/> -->
   <SecretCode/>
   <!-- <Locke/> -->
-  <CountDown/>
+  <!-- <CountDown/> -->
 </template>
 
 <script>
