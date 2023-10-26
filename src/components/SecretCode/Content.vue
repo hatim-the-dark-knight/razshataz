@@ -76,7 +76,13 @@
 
 <script setup>
 
+import words from '../../utils/words.json'
+
+const five = words["five"];
+const six = words["six"];
+
 const code_str = "verite";
+const n = code_str.length;
 
 const code = Array.from(code_str, char => char.toUpperCase());;
 const chances = [0, 1, 2, 3, 4, 5, 6, 7];
@@ -101,7 +107,7 @@ const inp = ref([]);
 
 function addChar(e) {
     if(isGameOver) return;
-    if((currIndex.value + 1) % code.length == 0) return;
+    if(((currIndex.value) % code.length == code.length - 1) && !isValidated) return;
     currIndex.value += 1;
     inp.value = [...inp.value, ...e.target.innerHTML];
     console.log(currIndex.value, chance);
@@ -129,6 +135,13 @@ function validateInput() {
 
     let ind = (currIndex.value + 1) - code.length;
     const user_inp = inp.value.slice(ind, currIndex.value + 1);
+    const user_inp_str = user_inp.join("");
+    console.log(five);
+    if(!user_inp_str.includes(five)) {
+        console.log("here");
+        return;
+    }
+
     for(let i = 0; i < code.length; i++) {
         for(let j = 0 ; j < code.length; j++) {
             if(code[i] === user_inp[j]) {
@@ -162,10 +175,10 @@ function validateInput() {
 
     yellowIndices.forEach((value) => {
         const index = value.toString();
-        document.getElementById(index).style.backgroundColor = "lightyellow";
+        document.getElementById(index).style.backgroundColor = "orange";
     });
     yellowLetters.forEach((key) => {
-        document.getElementById(key).style.backgroundColor = "lightyellow";
+        document.getElementById(key).style.backgroundColor = "orange";
     });
 
     greenIndices.forEach((value) => {
