@@ -1,4 +1,4 @@
-name: Deploy to GH Pages
+name: Deploy Vue and Vite App
 
 on:
   push:
@@ -6,26 +6,27 @@ on:
       - main
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@master
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          persist-credentials: false
+          node-version: 14
 
-      - name: Install 🔧
-        run: yarn install
+      - name: Install dependencies
+        run: npm install
 
-      - name: Build 🏗️
-        run: yarn build
-        env:
-          NODE_ENV: production
+      - name: Build the project
+        run: npm run build
 
-      - name: Deploy to GH Pages 🚀
-        if: ${{ github.event_name != 'pull_request' }}
+      - name: Deploy to hosting service (e.g., GitHub Pages)
         uses: peaceiris/actions-gh-pages@v3
         with:
+          publish_dir: ./dist
+          publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
