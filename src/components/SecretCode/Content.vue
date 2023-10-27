@@ -137,10 +137,10 @@ function validateInput() {
     const user_inp = inp.value.slice(ind, currIndex.value + 1);
     const user_inp_str = user_inp.join("");
     console.log(five);
-    if(!user_inp_str.includes(five)) {
-        console.log("here");
-        return;
-    }
+    // if(!user_inp_str.includes(five)) {
+    //     console.log("here");
+    //     return;
+    // }
 
     for(let i = 0; i < code.length; i++) {
         for(let j = 0 ; j < code.length; j++) {
